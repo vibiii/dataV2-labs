@@ -30,10 +30,10 @@ GROUP BY Title_ID, Author_ID
 ;
  
  ### Step3
-SELECT Author_ID, sum(Total_royalty + Advance1) Profit
+SELECT Author_ID, sum(Total_royalty + Advance) Profit
 FROM
 (
-SELECT Title_ID, Author_ID, sum(sales_royalty) Total_royalty, step1.Advance Advance1
+SELECT Title_ID, Author_ID, sum(sales_royalty) Total_royalty, Advance
  FROM
  (
  SELECT ta.title_id Title_ID,
